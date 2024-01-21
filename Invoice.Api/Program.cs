@@ -1,6 +1,10 @@
 global using Microsoft.AspNetCore.Mvc;
 global using Invoice.Core.Models;
 global using Invoice.Core.Interfaces;
+global using Microsoft.EntityFrameworkCore;
+global using Invoice.Infrastructure;
+global using Invoice.Core;
+global using AutoMapper;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

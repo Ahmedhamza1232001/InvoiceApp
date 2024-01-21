@@ -1,11 +1,9 @@
 ﻿namespace Invoice.Api;
 
-public class DiscountController:BaseApiController
+public class DiscountController:BaseGenericController<Discount,DiscountInput,DiscountToReturn>
 {
-    private readonly IGenericRepository<Discount> _discountsRepo;
+    public DiscountController(IBaseGenericService<Discount,DiscountInput,DiscountToReturn> baseGenericService) 
+    : base(baseGenericService) { }
 
-    public DiscountController(IGenericRepository<Discount> discountsRepo)
-    {
-        _discountsRepo = discountsRepo;
-    }
+
 }

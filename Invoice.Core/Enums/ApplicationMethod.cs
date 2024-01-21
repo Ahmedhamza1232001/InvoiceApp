@@ -1,8 +1,7 @@
 ﻿namespace Invoice.Core;
 
-public enum ApplicationMethodEnum
+public enum ApplicationMethod
 {
     Manual,
     Auto
-
 }

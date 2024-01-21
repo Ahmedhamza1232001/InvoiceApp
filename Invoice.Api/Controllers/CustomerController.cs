@@ -1,11 +1,8 @@
 ﻿namespace Invoice.Api;
-
-public class CustomerController:BaseApiController
+public class CustomerController : BaseGenericController<Customer,CustomerInput,CustomerToReturn>
 {
-    private readonly IGenericRepository<Customer> _customersRepo;
+    public CustomerController(IBaseGenericService<Customer,CustomerInput,CustomerToReturn> baseGenericService)
+     : base(baseGenericService) { }
 
-    public CustomerController(IGenericRepository<Customer> customersRepo)
-    {
-        _customersRepo = customersRepo;
-    }
+
 }

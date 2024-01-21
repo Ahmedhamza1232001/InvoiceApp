@@ -1,7 +1,3 @@
 ﻿global using Invoice.Core.Models;
-namespace Invoice.Core;
+global using Invoice.Core.Interfaces;
 
-public class GlobalUsings
-{
-
-}

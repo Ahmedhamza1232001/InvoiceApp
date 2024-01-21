@@ -1,7 +1,7 @@
 ﻿global using Invoice.Core.Interfaces;
 global using Invoice.Core.Models;
 global using Microsoft.EntityFrameworkCore;
-
+global using Invoice.Core;
 
 namespace Invoice.Infrastructure;
 

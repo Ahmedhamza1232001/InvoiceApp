@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using Invoice.Infrastructure;
-
+﻿using Invoice.Api;
 
 public static class ApplicationServicesExtensions
 {
@@ -12,6 +8,8 @@ public static class ApplicationServicesExtensions
     {
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+        
         services.AddDbContext<ApplicationDbContext>(options =>
         {
             options.UseSqlServer(
@@ -24,7 +22,9 @@ public static class ApplicationServicesExtensions
                 }
             );
         });
-        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        // services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped(typeof(IBaseGenericService<,,>), typeof(BaseGenericService<,,>));
         return services;
     }
 }
