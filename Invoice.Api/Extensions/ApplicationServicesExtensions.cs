@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Invoice.Infrastructure;
 
-namespace SmartShop.API.Extensions;
 
 public static class ApplicationServicesExtensions
 {
@@ -13,8 +12,6 @@ public static class ApplicationServicesExtensions
     {
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
-       
-
         services.AddDbContext<ApplicationDbContext>(options =>
         {
             options.UseSqlServer(
@@ -27,7 +24,7 @@ public static class ApplicationServicesExtensions
                 }
             );
         });
-
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         return services;
     }
 }

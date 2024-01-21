@@ -1,6 +1,6 @@
-﻿namespace Invoice.Core;
+﻿namespace Invoice.Core.Models;
 
-public class BaseEntity
+public abstract class BaseEntity
 {
     public int Id { get; set; }
     public DateTime CreationTime { get; set; }

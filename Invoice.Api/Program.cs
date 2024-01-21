@@ -1,5 +1,6 @@
-using SmartShop.API.Extensions;
-
+global using Microsoft.AspNetCore.Mvc;
+global using Invoice.Core.Models;
+global using Invoice.Core.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
